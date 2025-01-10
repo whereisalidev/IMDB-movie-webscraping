@@ -44,7 +44,8 @@ def display_results(movie_title_list, movie_trailer_list, movie_rating_list, mov
         i += 1
 
 
-
+#This module is not working completely
+#AS it is saving to excel but in HTML format like; <h3 class=".....">First Movie</h3>
 def save_to_excel(title_list):
     df = pd.DataFrame({'Title': title_list})
     with pd.ExcelWriter('movie_data.xlsx') as writer:
