@@ -9,6 +9,7 @@ headers = {
 }
 response = requests.get(url, headers=headers)
 
+
 def main():
     if response.status_code == 200:
 
@@ -41,6 +42,8 @@ def display_results(movie_title_list, movie_trailer_list, movie_rating_list, mov
     for (title, trailer, rating, year, vote, duration) in zip(movie_title_list, movie_trailer_list, movie_rating_list, movie_year_list, movie_vote_list, movie_duration_list):
         print(f"{i}) Title: {title.text[4:]}\n    Rating: {rating.text}\n    Votes: {vote.text}\n    Release Year: {year.text}\n    Duration: {duration.text}\n    Trailer: https://www.imdb.com{trailer.get('href')}\n-----------------------------------------------")
         i += 1
+
+
 
 def save_to_excel(title_list):
     df = pd.DataFrame({'Title': title_list})
